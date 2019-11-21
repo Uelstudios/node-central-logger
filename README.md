@@ -1,13 +1,17 @@
 # Achtung
 
-Zwischen Client & Server gibt es keine Au·then·ti·fi·zie·rung. Für eine Produktionsumgebung, muss dieses Modul dementsprechend angepasst werden. Es wird zudem mit dem unsicheren HTTP (nicht HTTPS)-Protokoll kommuniziert. Zum Testen ok, mehr noch nicht.
+Zwischen Client & Server gibt es keine Au·then·ti·fi·zie·rung. Für eine Produktionsumgebung, muss dieses Modul dementsprechend angepasst werden. Es wird zudem mit dem unsicheren HTTP (nicht HTTPS)-Protokoll kommuniziert. Zum Testen ok, mehr nicht.
 
 ## Nutzung
 
+Installieren`
+```
+npm i @uelstudios/node-central-logger
+```
 Server
 
 ```
-const LoggingServer = require("./index").Server;
+const LoggingServer = require("@uelstudios/node-central-logger").Server;
 
 const loggingServer = new LoggingServer(
   4505,
@@ -23,7 +27,7 @@ const loggingServer = new LoggingServer(
 Client
 
 ```
-const LoggingClient = require("./index").Client;
+const LoggingClient = require("@uelstudios/node-central-logger").Client;
 
 const options = {
     hookIntoProcess,      (optional)    // Override uncaughtException   (default: true)
